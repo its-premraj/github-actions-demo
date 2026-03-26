@@ -1,1 +1,15 @@
-
+name: Simple Demo Pipeline
+on:
+  workflow_dispatch: 
+jobs:
+  demo-job:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Show files
+        run: ls -la
+      - name: Read file content
+        run: cat hello.txt
+      - name: Print content
+        run: echo "pipeline initiated successfully"
